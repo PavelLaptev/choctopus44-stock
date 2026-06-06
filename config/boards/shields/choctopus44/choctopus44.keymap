@@ -17,11 +17,12 @@
   combos {
     compatible = "zmk,combos";
 
-    // Press the two thumb keys flanking the encoder knob together to
-    // unlock ZMK Studio. Positions 40 (left of knob) + 41 (right of knob).
+    // Unlock ZMK Studio: press the two TOP OUTER CORNER keys together
+    // (top-left-most switch + top-right-most switch). Position 0 + 11.
+    // Generous timeout so a two-handed press doesn't need perfect timing.
     combo_studio_unlock {
-      timeout-ms = <100>;
-      key-positions = <40 41>;
+      timeout-ms = <250>;
+      key-positions = <0 11>;
       bindings = <&studio_unlock>;
     };
   };
