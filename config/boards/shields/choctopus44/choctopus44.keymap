@@ -1,16 +1,16 @@
 /*
- * DIAGNOSTIC keymap: one layer, every matrix position = a distinct visible key.
- * Order is row-major RC(0,0)..RC(7,5), matching the identity transform.
+ * DIAGNOSTIC keymap (printable-only): 8 rows x 6 cols, every position = a
+ * distinct VISIBLE key. Press a switch, read what it types, look it up here.
  *
- * Cheat sheet (row = physical scan row / pin):
- *   row0 -> 1 2 3 4 5 6
- *   row1 -> 7 8 9 0 Q W
- *   row2 -> E R T Y U I
- *   row3 -> O P A S D F
- *   row4 (pin 10 / "B6") -> G H J K L Z    <-- right thumbs expected on cols 0-3 = G H J K
- *   row5 -> X C V B N M
- *   row6 -> , . / ; ' [
- *   row7 -> ] \ ` = TAB -
+ * row(pin)  -> col4 col5 col6 col7 col8 col9
+ *   0 (p0)  ->  1    2    3    4    5    6
+ *   1 (p1)  ->  7    8    9    0    q    w
+ *   2 (p2)  ->  e    r    t    y    u    i
+ *   3 (p3)  ->  o    p    a    s    d    f
+ *   4 (p10) ->  g    h    j    k    l    z
+ *   5 (p14) ->  x    c    v    b    n    m
+ *   6 (p15) ->  ,    .    /    ;    '    [
+ *   7 (p16) ->  ]    \    `    =    -    (tab)
  */
 
 #include <behaviors.dtsi>
@@ -22,16 +22,15 @@
 
     default_layer {
       bindings = <
-        &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6
-        &kp N7     &kp N8     &kp N9     &kp N0     &kp Q      &kp W
-        &kp E      &kp R      &kp T      &kp Y      &kp U      &kp I
-        &kp O      &kp P      &kp A      &kp S      &kp D      &kp F
-        &kp G      &kp H      &kp J      &kp K      &kp L      &kp Z
-        &kp X      &kp C      &kp V      &kp B      &kp N      &kp M
-        &kp COMMA  &kp DOT    &kp FSLH   &kp SEMI   &kp SQT    &kp LBKT
-        &kp RBKT   &kp BSLH   &kp GRAVE  &kp EQUAL  &kp TAB    &kp MINUS
+        &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6
+        &kp N7    &kp N8    &kp N9    &kp N0    &kp Q     &kp W
+        &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I
+        &kp O     &kp P     &kp A     &kp S     &kp D     &kp F
+        &kp G     &kp H     &kp J     &kp K     &kp L     &kp Z
+        &kp X     &kp C     &kp V     &kp B     &kp N     &kp M
+        &kp COMMA &kp DOT   &kp FSLH  &kp SEMI  &kp SQT   &kp LBKT
+        &kp RBKT  &kp BSLH  &kp GRAVE &kp EQUAL &kp MINUS &kp TAB
       >;
-      sensor-bindings = <&inc_dec_kp UP DOWN>;
     };
   };
 };
